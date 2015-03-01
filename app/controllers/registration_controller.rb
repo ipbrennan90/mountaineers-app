@@ -4,9 +4,9 @@ class RegistrationController < ApplicationController
   end
 
   def create
-    @mountaineer = Mountaineer.new(user_params)
+    @mountaineer = Mountaineer.new(mountaineer_params)
     if @mountaineer.save
-      session[:user_id] = @mountaineer.id
+      session[:mountaineer_id] = @mountaineer.id
       flash[:notice] = "thanks for signing up"
       redirect_to root_path
     else
@@ -18,6 +18,6 @@ class RegistrationController < ApplicationController
 
 
   def mountaineer_params
-    params.require(:mountaineer).permit(:email, :password)
+    params.require(:mountaineer).permit(:name, :password)
   end
 end

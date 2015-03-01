@@ -1,7 +1,7 @@
 class AuthenticationController < ApplicationController
 
   def create
-    mountaineer = Mountaineer.find_by(email: params[:email])
+    mountaineer = Mountaineer.find_by(name: params[:name])
     if mountaineer && mountaineer.authenticate(params[:password])
       session[:mountaineer_id] = mountaineer.id
       flash[:notice] = "logged in"

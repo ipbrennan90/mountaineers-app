@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def current_mountaineer
     if session[:mountaineer_id].present?
-      User.find(session[:mountaineer_id])
+      Mountaineer.find(session[:mountaineer_id])
     end
   end
 end
