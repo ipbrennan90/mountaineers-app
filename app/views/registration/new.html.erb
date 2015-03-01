@@ -1,0 +1,11 @@
+<%= form_for @mountaineer, url: sign_up_path, do |f| %>
+
+<%= f.label :name %>
+<%= f.text_area :name %>
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+
+<%= f.submit "sign up" %>
+
+<% end %>

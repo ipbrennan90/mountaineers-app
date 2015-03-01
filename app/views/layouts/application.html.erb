@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end%>
+  <% if current_mountaineer %>
+  <%= link_to "sign_out", sign_out_path %>
+  <% else %>
+  <%= link_to "sign in", sign_in_path %>
+  <% end %>
 <%= yield %>
 
 </body>
